@@ -1,11 +1,16 @@
-package interfaces.figuras;
+package heranca.figuras;
 
 import java.util.Objects;
 
-public class Circulo implements Figura2D {
+public class Circulo extends FiguraGeometrica2DBase {
     private double raio;
 
+    public Circulo() {
+        super("CIRCULO");
+    }
+
     public Circulo(double raio) {
+        super("CIRCULO");
         this.raio = raio;
     }
 
@@ -37,11 +42,6 @@ public class Circulo implements Figura2D {
     }
 
     @Override
-    public String getDescricao() {
-        return "CIRCULO";
-    }
-
-    @Override
     public double calculaArea() {
         return Math.PI * Math.pow(raio, 2);
     }
@@ -51,10 +51,5 @@ public class Circulo implements Figura2D {
         return 2 * Math.PI * raio;
     }
 
-    @Override
-    public int compareTo(Figura2D outraFigura) {
-        if(this.calculaArea() == outraFigura.calculaArea()) return 0;
-        if(this.calculaArea() < outraFigura.calculaArea())  return -1;
-        return 1;
-    }
+
 }

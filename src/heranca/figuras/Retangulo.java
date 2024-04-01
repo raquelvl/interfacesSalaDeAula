@@ -1,12 +1,14 @@
-package interfaces.figuras;
+package heranca.figuras;
 
 import java.util.Objects;
 
-public class Retangulo implements Figura2D {
+public class Retangulo extends FiguraGeometrica2DBase {
     private double lado1;
     private double lado2;
 
     public Retangulo(double lado1, double lado2) {
+        super("RETANGULO");
+
         this.lado1 = lado1;
         this.lado2 = lado2;
     }
@@ -48,11 +50,6 @@ public class Retangulo implements Figura2D {
     }
 
     @Override
-    public String getDescricao() {
-        return "RETANGULO";
-    }
-
-    @Override
     public double calculaArea() {
         return lado1 * lado2;
     }
@@ -62,10 +59,4 @@ public class Retangulo implements Figura2D {
         return 2 * lado1 + 2 * lado2;
     }
 
-    @Override
-    public int compareTo(Figura2D outraFigura) {
-        if(this.calculaArea() == outraFigura.calculaArea()) return 0;
-        if(this.calculaArea() < outraFigura.calculaArea())  return -1;
-        return 1;
-    }
 }

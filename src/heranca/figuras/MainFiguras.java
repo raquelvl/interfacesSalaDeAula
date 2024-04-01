@@ -1,4 +1,4 @@
-package interfaces.figuras;
+package heranca.figuras;
 
 import java.util.Collections;
 import java.util.Scanner;

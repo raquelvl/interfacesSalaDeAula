@@ -1,4 +1,4 @@
-package interfaces.figuras;
+package heranca.figuras;
 
 import java.util.ArrayList;
 import java.util.List;
